@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Outlet, Route, Navigate, Routes } from "react-router-dom";
+import { Login } from "./pages/login/login";
+import { Register } from "./pages/register/Register";
+import { Profile } from "./pages/profile/Profile";
+import { Home } from "./pages/home/Home";
+import { Navbar } from "./components/navbar/navbar";
+import { Leftbar } from "./components/leftbar/leftbar";
+import { Rightbar } from "./components/rightbar/rightbar";
 
 function App() {
+  const currUser = true;
+
+  const Layout = () => {
+    return (
+      <div>
+        <Navbar />
+        <div style={{ display: "flex" }}>
+          <Leftbar />
+          <div style={{flex:6}}>
+          <Outlet />
+          </div>
+          <Rightbar />
+        </div>
+      </div>
+    );
+  };
+
+  const ProtectedRoute = ({ children }) => {
+    if (!currUser) {
+      return <Navigate to="/login" />;
+    }
+    return children;
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<ProtectedRoute>{<Layout />}</ProtectedRoute>}>
+          <Route index element={<Home />} />
+          <Route path="/profile/:id" element={<Profile />} />
+        </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

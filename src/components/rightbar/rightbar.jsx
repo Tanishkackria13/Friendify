@@ -1,0 +1,107 @@
+import React from 'react'
+import "./rightbar.scss"
+export const Rightbar = () => {
+  return (
+    <div className="rightbar">
+      <div className="container">
+        <div className="item">
+          <span>Suggestions For You</span>
+          <div className="user">
+            <div className="userinfo">
+              <img src="" alt="" />
+              <span>Tanish</span>
+            </div>
+            <div className="buttons">
+              <button>follow</button>
+              <button>dismiss</button>
+            </div>
+          </div>
+          <div className="user">
+            <div className="userinfo">
+              <img src="" alt="" />
+              <span>Tanish</span>
+            </div>
+            <div className="buttons">
+              <button>follow</button>
+              <button>dismiss</button>
+            </div>
+          </div>
+        </div>
+          <div className="item">
+            <span>Latest Activities</span>
+            <div className="user">
+              <div className="userinfo">
+                <img src="" alt="" />
+                <p>
+                  <span>Tanish </span>
+                  changed their cover photo
+                </p>
+              </div>
+              <span>1 min ago</span>
+            </div>
+            <div className="user">
+              <div className="userinfo">
+                <img src="" alt="" />
+                <p>
+                  <span>Tanish </span>
+                  changed their cover photo
+                </p>
+              </div>
+              <span>1 min ago</span>
+            </div>
+            <div className="user">
+              <div className="userinfo">
+                <img src="" alt="" />
+                <p>
+                  <span>Tanish </span>
+                  changed their cover photo
+                </p>
+              </div>
+              <span>1 min ago</span>
+            </div>
+            <div className="user">
+              <div className="userinfo">
+                <img src="" alt="" />
+                <p>
+                  <span>Tanish </span>
+                  changed their cover photo
+                </p>
+              </div>
+              <span>1 min ago</span>
+            </div>
+          </div>
+          <div className="item">
+            <span>Online Friends</span>
+            <div className="user">
+              <div className="userinfo">
+                <img src="" alt="" />
+                <div className="online"/>
+                  <span>Tanish </span>
+              </div>
+            </div>
+            <div className="user">
+              <div className="userinfo">
+                <img src="" alt="" />
+                <div className="online"/>
+                  <span>Tanish </span>
+              </div>
+            </div>
+            <div className="user">
+              <div className="userinfo">
+                <img src="" alt="" />
+                <div className="online"/>
+                  <span>Tanish </span>
+              </div>
+            </div>
+            <div className="user">
+              <div className="userinfo">
+                <img src="" alt="" />
+                <div className="online"/>
+                  <span>Tanish </span>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  )
+}
