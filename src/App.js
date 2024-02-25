@@ -9,11 +9,11 @@ import { Navbar } from "./components/navbar/navbar";
 import { Leftbar } from "./components/leftbar/leftbar";
 import { Rightbar } from "./components/rightbar/rightbar";
 import { DarkModeContext } from "./context/darkmodecontext";
+import { AuthContext } from "./context/authContext";
 
 function App() {
-  const currUser = true;
+  const {currentUser} = useContext(AuthContext);
   const {darkMode}=useContext(DarkModeContext)
-  console.log(darkMode )
   const Layout = () => {
     return (
       <div className={`theme-${darkMode?"dark":"light"}`}>
@@ -30,7 +30,7 @@ function App() {
   };
 
   const ProtectedRoute = ({ children }) => {
-    if (!currUser) {
+    if (!currentUser) {
       return <Navigate to="/login" />;
     }
     return children;
